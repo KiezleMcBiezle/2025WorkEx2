@@ -1,14 +1,13 @@
-body {
+html, body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background: #fff;
+    background-color: #aef7f6;
 }
 
 nav {
     background: #ccc;
-    padding: 10px;
 }
 
     nav ul {
@@ -34,6 +33,7 @@ section {
 
     section.left {
         text-align: left;
+        font-family: "Winky Rough";
     }
 
     section.right {
@@ -58,4 +58,26 @@ section {
     border: 1px solid #ccc;
     flex: 1;
     text-align: center;
+}
+
+.navlinks {
+    width: 80vw;
+}
+.navlinks a {
+    color: white;
+}
+
+.navlinks a:hover {
+     color: #51a79b; /* Darker yellow */
+}
+#login {
+    float: right;
+    top: 0%;
+}
+#login a {
+    color: white;
+}
+
+#login a:hover {
+    color: #51a79b; /* Darker yellow */
 }
