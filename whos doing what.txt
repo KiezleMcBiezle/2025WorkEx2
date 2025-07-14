@@ -1,0 +1,8 @@
+FRONTEND - Arnav Norah
+BACKEND - Jack Kuda
+DATABASE - Abdullah Solomon
+
+Stuff to do:
+FRONTEND - Design all pages - Home, product, list, filter , login, tracking, payment, Logo, Name (bareform), Backstory, Goals, Shopping Cart
+BACKEND - Linking fe and database, help with database, hashing for login, API
+DATABASE - Hold data, order tracking, usernames and passwords
