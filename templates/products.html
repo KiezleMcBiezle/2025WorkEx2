@@ -8,19 +8,23 @@
 </head>
 <body>
     <nav>
-        <ul>
+        <ul class="navlinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
+        </ul>
+        <ul id="login">
             <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
     <main>
         <h2>Our Collection</h2>
-        <div class="products">
-            <div class="product-item">Product 1</div>
-            <div class="product-item">Product 2</div>
-            <div class="product-item">Product 3</div>
-        </div>
+        {%for product in products%}
+            <div class="product">
+                <div><img src= "{{url_for('static',filename='Images/' + product.image_url)}}" width = "256"></div>
+                <hr>
+                <div class="producttext"><p>{{product.name}}</p></div>
+            </div>
+        {%endfor%}
     </main>
 </body>
 </html>
