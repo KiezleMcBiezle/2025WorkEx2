@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -6,45 +7,82 @@ html, body {
     background-color: #aef7f6;
 }
 
-
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5vh;
-  background: #ccc;
+@font-face {
+    font-family: "Winky Rough";
+    src: url(WinkyRough-VariableFont_wght.ttf);
 }
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-    }
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(RobotoSlab-VariableFont_wght.ttf);
+}
 
-    nav a {
-        text-decoration: none;
-        color: #333;
-    }
+section {
+    font-family: "Roboto Slab";
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh;
+    background: #ccc;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
 
 main {
     padding: 20px;
 }
 
 section {
-    margin-bottom: 30px;
+    height: 50vh;
 }
 
-    section.left {
-        text-align: left;
-        font-family: "Winky Rough";
-    }
+section.left {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    font-family: "Roboto Slab";
 
-    section.right {
-        text-align: right;
-    }
+}
+
+section.right {
+    position: relative;
+    width: 100%;
+    text-align: right;
+    font-family: "Roboto Slab";
+    position: absolute;
+    right: 1vw;
+}
+
+section p {
+    font-size: 1.35rem;
+    font-family: "Roboto Slab";
+}
+
+p {
+    font-family: "Roboto Slab";
+}
+
+section.left p {
+    margin-right: 50%;
+}
+
+section.right p {
+    margin-left: 50%;
+}
 
 .bottom-link {
     display: block;
@@ -52,11 +90,18 @@ section {
     text-align: center;
     text-decoration: none;
     color: #333;
+    bottom: 2vh;
+    position: absolute;
+    right: 45vw;
 }
 
 .products {
-    display: flex;
-    gap: 20px;
+    position: grid;
+    display: grid;
+    grid-template-columns: 10vw 10vw 10vw;
+    gap: 2vw;
+    border: 0px solid #000;
+    justify-content: center;
 }
 
 .product-item {
@@ -64,31 +109,61 @@ section {
     border: 1px solid #ccc;
     flex: 1;
     text-align: center;
+    width: 10vw;
+    height: 40vh;
+    margin: auto;
+}
+
+.productimage,
+.producttext {
+    display: table-cell;
+    vertical-align: bottom;
+    clear: both;
+    text-align: center;
+    border: 0px solid tomato;
+    padding: 10px;
+}
+
+.productimage {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    right: 46vw;
+}
+
+.producttext {
+    width: 10vw;
+
 }
 
 .navlinks {
     width: 80vw;
 }
+
 .navlinks a {
     color: white;
 }
 
 .navlinks a:hover {
-     color: #51a79b; /* Darker yellow */
+    color: #51a79b;
+    /* Darker yellow */
 }
+
 #login {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
 #login a {
     color: white;
 }
 
 #login a:hover {
-    color: #51a79b; /* Darker yellow */
+    color: #51a79b;
+    /* Darker yellow */
 }
 
 .brand-name {
@@ -103,11 +178,28 @@ section {
     text-align: center;
     justify-content: center;
     align-content: center;
-    
-  }
+    position: absolute;
+    left: 44vw;
+
+}
 
 #logos {
     width: 6vw;
     height: 12.5vh;
+
 }
 
+.homesection {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 16vh;
+}
+
+.filler {
+    height: 10vh;
+}
+
+.aboutussection {
+    height: 40vh;
+}
