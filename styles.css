@@ -69,6 +69,11 @@ section.right {
 
 section p {
     font-size: 1.35rem;
+    font-family: "Roboto Slab";
+}
+
+p {
+    font-family: "Roboto Slab";
 }
 
 section.left p {
@@ -91,8 +96,12 @@ section.right p {
 }
 
 .products {
-    display: flex;
-    gap: 20px;
+    position: grid;
+    display: grid;
+    grid-template-columns: 10vw 10vw 10vw;
+    gap: 2vw;
+    border: 0px solid #000;
+    justify-content: center;
 }
 
 .product-item {
@@ -100,6 +109,31 @@ section.right p {
     border: 1px solid #ccc;
     flex: 1;
     text-align: center;
+    width: 10vw;
+    height: 40vh;
+    margin: auto;
+}
+
+.productimage,
+.producttext {
+    display: table-cell;
+    vertical-align: bottom;
+    clear: both;
+    text-align: center;
+    border: 0px solid tomato;
+    padding: 10px;
+}
+
+.productimage {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    right: 46vw;
+}
+
+.producttext {
+    width: 10vw;
+
 }
 
 .navlinks {
