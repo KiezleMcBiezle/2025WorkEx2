@@ -103,11 +103,15 @@ section {
     text-align: center;
     justify-content: center;
     align-content: center;
+    position: absolute;
+    left: 45vw;
     
   }
 
 #logos {
     width: 6vw;
     height: 12.5vh;
+
 }
+
 
