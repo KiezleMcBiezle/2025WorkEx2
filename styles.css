@@ -85,6 +85,9 @@ section.right p {
     text-align: center;
     text-decoration: none;
     color: #333;
+    bottom: 2vh;
+    position: absolute;
+    right: 45vw;
 }
 
 .products {
@@ -161,4 +164,8 @@ section.right p {
 
 .filler {
     height: 10vh;
+}
+
+.aboutussection {
+    height: 40vh;
 }
