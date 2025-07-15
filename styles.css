@@ -6,8 +6,14 @@ html, body {
     background-color: #aef7f6;
 }
 
+
+
 nav {
-    background: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh;
+  background: #ccc;
 }
 
     nav ul {
@@ -71,8 +77,11 @@ section {
      color: #51a79b; /* Darker yellow */
 }
 #login {
-    float: right;
-    top: 0%;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 #login a {
     color: white;
@@ -81,3 +90,24 @@ section {
 #login a:hover {
     color: #51a79b; /* Darker yellow */
 }
+
+.brand-name {
+    font-family: "Winky Rough";
+    font-size: 5vh;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    
+  }
+
+#logos {
+    width: 6vw;
+    height: 12.5vh;
+}
+
