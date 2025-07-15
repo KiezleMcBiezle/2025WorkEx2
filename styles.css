@@ -1,0 +1,113 @@
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #aef7f6;
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh;
+  background: #ccc;
+}
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+    }
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+    section.left {
+        text-align: left;
+        font-family: "Winky Rough";
+    }
+
+    section.right {
+        text-align: right;
+    }
+
+.bottom-link {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.products {
+    display: flex;
+    gap: 20px;
+}
+
+.product-item {
+    padding: 20px;
+    border: 1px solid #ccc;
+    flex: 1;
+    text-align: center;
+}
+
+.navlinks {
+    width: 80vw;
+}
+.navlinks a {
+    color: white;
+}
+
+.navlinks a:hover {
+     color: #51a79b; /* Darker yellow */
+}
+#login {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#login a {
+    color: white;
+}
+
+#login a:hover {
+    color: #51a79b; /* Darker yellow */
+}
+
+.brand-name {
+    font-family: "Winky Rough";
+    font-size: 5vh;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    
+  }
+
+#logos {
+    width: 6vw;
+    height: 12.5vh;
+}
+
