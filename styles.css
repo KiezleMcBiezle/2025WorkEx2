@@ -47,7 +47,7 @@ main {
 }
 
 section {
-    padding-bottom: 5vh;
+    height: 50vh;
 }
 
 section.left {
@@ -65,6 +65,10 @@ section.right {
     font-family: "Roboto Slab";
     position: absolute;
     right: 1vw;
+}
+
+section p {
+    font-size: 1.35rem;
 }
 
 section.left p {
@@ -138,7 +142,7 @@ section.right p {
     justify-content: center;
     align-content: center;
     position: absolute;
-    left: 45vw;
+    left: 44vw;
 
 }
 
@@ -152,5 +156,9 @@ section.right p {
     display: flex;
     width: 100%;
     flex-direction: column;
-    height: 20vh;
+    height: 16vh;
+}
+
+.filler {
+    height: 10vh;
 }
