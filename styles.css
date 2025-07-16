@@ -72,13 +72,14 @@ section p {
     font-family: "Roboto Slab";
 }
 
-p {
-    font-family: "Roboto Slab";
+#hoodietext {
+    font-size: 0.9rem;
 }
 
 section.left p {
     margin-right: 50%;
 }
+
 
 section.right p {
     margin-left: 50%;
@@ -96,24 +97,39 @@ section.right p {
 }
 
 .products {
+    text-align: center;
     position: grid;
     display: grid;
-    grid-template-columns: 10vw 10vw 10vw;
-    gap: 2vw;
+    grid-template-columns: 15vw 15vw 15vw;
+    gap: 10vw;
     border: 0px solid #000;
     justify-content: center;
 }
 
+.details {
+    position: relative;
+    left: 0vw;
+    right: 100%;
+    grid-template-columns: 25vw;
+    grid-template-rows: 50vh;
+    width: 25vw;
+    height: 70vh;
+}
+
 .product-item {
-    padding: 20px;
-    border: 1px solid #ccc;
+    padding: 30px;
+    border: 5px solid #394558;
+    border-radius: 10px;
     flex: 1;
     text-align: center;
-    width: 10vw;
+    width: 12vw;
     height: 40vh;
     margin: auto;
 }
-
+.products a {
+    text-decoration: none;
+    color: black;
+}
 .productimage,
 .producttext {
     display: table-cell;
@@ -125,16 +141,79 @@ section.right p {
 }
 
 .productimage {
+    align-self: center;
     height: 100%;
     width: 100%;
     justify-content: center;
-    right: 46vw;
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+
+.hoodie-section {
+    /*
+    padding-bottom: 40px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px; 
+    padding: 0px 0px 0px 0px;
+    padding-bottom: 7vh; */
+}
+
+.detail-hoodie {
+    width: 100%;
+    height: 100%;
+}
+
+.detailhoodie {
+    padding-bottom: 7vh;
 }
 
 .producttext {
     width: 10vw;
+    top: 0;
+}
+
+.jacket-section {
+    width: auto;
+
+    padding-left: 0px;
+    padding-right: 1px;
+    padding-top: 0px;
+    padding-bottom: 10vh;
+}
+
+#jacket {
+    width: 100%;
+    height: 100%;
 
 }
+.jackettext {
+    font-size: 1.15rem;
+}
+
+.jogger-section{
+    width:auto;
+
+    padding-left: 0px;
+    padding-right: 1px;
+    padding-top: 0px;
+    padding-bottom: 10vh;
+}
+
+#jogger {
+    width: 100%;
+    height: 95%;
+}
+.joggertext {
+    font-size:1.15rem;
+
+
+}
+
+
+
+
 
 .navlinks {
     width: 80vw;
@@ -202,4 +281,17 @@ section.right p {
 
 .aboutussection {
     height: 40vh;
+}
+
+#hoodie {
+    align-self: center;
+
+
+    left: 50vw;
+
+
+}
+
+.detailtext {
+    font-size: 1.5rem;
 }
