@@ -126,10 +126,12 @@ section.right p {
     height: 40vh;
     margin: auto;
 }
+
 .products a {
     text-decoration: none;
     color: black;
 }
+
 .productimage,
 .producttext {
     display: table-cell;
@@ -147,7 +149,6 @@ section.right p {
     justify-content: center;
     padding-left: 0px;
     padding-right: 0px;
-
 }
 
 .hoodie-section {
@@ -163,10 +164,12 @@ section.right p {
 .detail-hoodie {
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
 .detailhoodie {
     padding-bottom: 7vh;
+    position: absolute;
 }
 
 .producttext {
@@ -176,7 +179,6 @@ section.right p {
 
 .jacket-section {
     width: auto;
-
     padding-left: 0px;
     padding-right: 1px;
     padding-top: 0px;
@@ -188,12 +190,13 @@ section.right p {
     height: 100%;
 
 }
+
 .jackettext {
     font-size: 1.15rem;
 }
 
-.jogger-section{
-    width:auto;
+.jogger-section {
+    width: auto;
 
     padding-left: 0px;
     padding-right: 1px;
@@ -205,15 +208,10 @@ section.right p {
     width: 100%;
     height: 95%;
 }
+
 .joggertext {
-    font-size:1.15rem;
-
-
+    font-size: 1.15rem;
 }
-
-
-
-
 
 .navlinks {
     width: 80vw;
@@ -285,13 +283,32 @@ section.right p {
 
 #hoodie {
     align-self: center;
-
-
     left: 50vw;
-
-
 }
 
 .detailtext {
     font-size: 1.5rem;
+    position: absolute;
+}
+
+.detailtitle {
+    margin-left: 48vw;
+}
+
+.writing {
+    position: absolute;
+    left: 50vh;
+    width: 30vh;
+    margin-right: 42vw;
+    margin-top: 10vh;
+    font-size: 1.75rem;
+    color: rgb(145, 11, 11);
+}
+
+.description{
+    float: right;
+    width: vw;
+    height: 10vh;
+    margin-right: 45vw;
+    margin-top: 20vh;
 }
