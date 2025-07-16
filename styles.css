@@ -114,7 +114,10 @@ section.right p {
     height: 40vh;
     margin: auto;
 }
-
+.products a {
+    text-decoration: none;
+    color: black;
+}
 .productimage,
 .producttext {
     display: table-cell;
