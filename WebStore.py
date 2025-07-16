@@ -31,7 +31,7 @@ class Order(db.Model):
 with app.app_context():
     db.create_all()
     
-@app.route('/')
+@app.route('/products')
 def index():
     db = mysql.connector.connect(
         host="localhost",
@@ -43,8 +43,32 @@ def index():
     cursor.execute("SELECT product_name,description,image_url FROM products")
     rows = cursor.fetchall()
     products = [{"name":r[0],"description":r[1],"image_url":r[2]} for r in rows]
+    sort_option = request.args.get("sort", "price_asc")
+    type = request.args.get("category")
+
+    query = "SELECT * FROM products"
+    filters = []
+    params = []
+
+    if type :
+        filters.append("type = ?")
+        params.append(type)
+
+    if filters:
+        query += " WHERE " + " AND ".join(filters)
+
+    if sort_option == "price_asc":
+        query += " ORDER BY price ASC"
+    elif sort_option == "price_desc":
+        query += " ORDER BY price DESC"
+    elif sort_option == "name":
+        query += " ORDER BY name ASC"
+    elif sort_option == "newest":
+        query += " ORDER BY id DESC" 
+
+    products = db.execute(query, params).fetchall()
     db.close()
-    return render_template('products.html', products=products)
+    return render_template("products.html", products=products, type=type, sort=sort_option)
 
 @app.route('/add_to_cart/<int:product_id>')
 def add_to_cart(product_id):
@@ -69,14 +93,29 @@ def cart():
 
 @app.route('/checkout', methods=['POST'])
 def checkout():
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="shopdb"
+    )
     name = request.form['name']
     address = request.form['address']
     cart = session.get('cart', {})
     total = 0
+    
+    cursor = db.cursor()
+    cursor.execute("SELECT product_ID,stock FROM products")
+    rows = cursor.fetchall()
+    products = ({"ID":r[0],"QTY":r[1]} for r in rows)
 
     for pid, qty in cart.items():
         product = Product.query.get(int(pid))
         total += product.price * qty
+        if qty > product["QTY"]:
+            return "Insufficient Stocks"
+        else:
+            product.stock -= qty
 
     order = Order(customer_name=name, address=address, total=total)
     db.session.add(order)
