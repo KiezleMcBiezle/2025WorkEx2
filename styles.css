@@ -73,7 +73,7 @@ section p {
 }
 
 #hoodietext {
-    font-size: 0.9rem;
+    font-size: .99rem;
 }
 
 section.left p {
@@ -152,13 +152,13 @@ section.right p {
 }
 
 .hoodie-section {
-    /*
+    
     padding-bottom: 40px;
     padding-top: 0px;
     padding-left: 10px;
     padding-right: 10px; 
     padding: 0px 0px 0px 0px;
-    padding-bottom: 7vh; */
+    padding-bottom: 7vh; 
 }
 
 .detail-hoodie {
@@ -182,7 +182,7 @@ section.right p {
     padding-left: 0px;
     padding-right: 1px;
     padding-top: 0px;
-    padding-bottom: 10vh;
+    padding-bottom: 8vh;
 }
 
 #jacket {
@@ -201,7 +201,7 @@ section.right p {
     padding-left: 0px;
     padding-right: 1px;
     padding-top: 0px;
-    padding-bottom: 10vh;
+    padding-bottom:3.3vh;
 }
 
 #jogger {
@@ -297,9 +297,9 @@ section.right p {
 
 .writing {
     position: absolute;
-    left: 50vh;
+    left: 50vw;
     width: 30vh;
-    margin-right: 42vw;
+    margin-right: 0vw;
     margin-top: 10vh;
     font-size: 1.75rem;
     color: rgb(145, 11, 11);
@@ -307,8 +307,22 @@ section.right p {
 
 .description{
     float: right;
-    width: vw;
+    width: 30vw;
     height: 10vh;
-    margin-right: 45vw;
-    margin-top: 20vh;
+    margin-right: 30vw;
+    margin-top: 25vh;
 }
+
+.addtocart {
+    position: absolute;
+    float: right;
+    left: 58vw;
+    margin-top: 49vh;color: #ebf3f3;
+    height: 13vh;
+    width: 20vh;
+    font-size: larger;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif, sans-serif ;
+    background-color: #51a4c2;
+    border-radius: 70% ;
+}
+    
