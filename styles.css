@@ -186,9 +186,8 @@ section.right p {
 }
 
 #jacket {
-    width: 100%;
-    height: 100%;
-
+    width: 17vw;
+    height: 40vh;
 }
 
 .jackettext {
@@ -205,8 +204,8 @@ section.right p {
 }
 
 #jogger {
-    width: 100%;
-    height: 95%;
+    width: 17vw;
+    height: 30vh;
 }
 
 .joggertext {
@@ -284,6 +283,8 @@ section.right p {
 #hoodie {
     align-self: center;
     left: 50vw;
+    width: 17vw;
+    height: 40vh;
 }
 
 .detailtext {
@@ -314,10 +315,7 @@ section.right p {
 }
 
 .addtocart {
-    position: absolute;
-    float: right;
-    left: 58vw;
-    margin-top: 49vh;color: #ebf3f3;
+    color: #ebf3f3;
     height: 13vh;
     width: 20vh;
     font-size: larger;
@@ -325,4 +323,36 @@ section.right p {
     background-color: #51a4c2;
     border-radius: 70% ;
 }
-    
+
+.remove {
+    background-color: rgb(145, 11, 13);
+}
+
+table, th{
+    border: 0.2vh solid black;
+}
+table {
+    width: 100%;
+}
+
+.productprice {
+    color: rgb(145, 11, 11);
+}
+
+th{
+    padding: 0.1vw;
+}
+
+
+.carttitle{
+    margin-left: 41vw;
+}
+
+.checkout {
+    background-color: #52e142;
+    float: right;
+    margin: 3vh;
+    margin-right: 38vw;
+    width: 20vw;
+    height: 20vh;
+}
