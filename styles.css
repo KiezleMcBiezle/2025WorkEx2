@@ -356,3 +356,20 @@ th{
     width: 20vw;
     height: 20vh;
 }
+
+.checkoutpage {
+    margin-left: 30vw;
+}
+
+.order{
+    height:7vh;
+    width: 10vw;
+    float: right;
+    margin-right: 45vw;
+    background-color: #347582;
+    color: antiquewhite;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: #000;
+    border-radius: 40vw;
+    margin-top: 10vh;
+}
