@@ -1,10 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
-<<<<<<< HEAD
-=======
-from flask_session import Session
-import mysql.connector
->>>>>>> 6c4d6ab25275dee5ae60a73c7db61563aefaffac
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -13,7 +8,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:330
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-<<<<<<< HEAD
 # Models
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
@@ -26,55 +20,6 @@ class User(db.Model):
     
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
-=======
-class User(db.Model):
-    __tablename__ = "user"
-    
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    password = db.Column(db.String(200), nullable=False)
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        uname = request.form['username']
-        pwd = request.form['password']
-        
-        if User.query.filter_by(username=uname).first():
-            return "Username already exists. <a href='/register'>Try again</a>"
-        
-        hashed_pwd = generate_password_hash(pwd)
-        new_user = User(username=uname, password=hashed_pwd)
-        db.session.add(new_user)
-        db.session.commit()
-        session['user'] = uname
-        return redirect(url_for('products'))
-
-    return render_template('register.html')
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        uname = request.form['username']
-        pwd = request.form['password']
-        
-        user = User.query.filter_by(username=uname).first()
-        if user and check_password_hash(user.password, pwd):
-            session['user'] = uname
-            return redirect(url_for('products'))
-        else:
-            return "Invalid credentials. <a href='/login'>Try again</a>"
-
-    return render_template('login')
-
-@app.route('/logout')
-def logout():
-    session.pop('user', None)
-    return redirect(url_for('index'))
-
-with app.app_context():
-    db.create_all()
->>>>>>> 6c4d6ab25275dee5ae60a73c7db61563aefaffac
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -125,7 +70,6 @@ def logout():
     return redirect(url_for('login'))
 
 @app.route('/')
-<<<<<<< HEAD
 def about():
     return render_template('About.html')
 
@@ -138,7 +82,7 @@ def store():
     # Get query parameters
     product_type = request.args.get('type')
     colour = request.args.get('colour')
-    sort_by = request.args.get('sort_by')  # e.g. 'price_asc', 'price_desc', 'name_asc', etc.
+    sort_by = request.args.get('sort_by')
 
     # Start building the query
     query = Product.query
@@ -161,22 +105,6 @@ def store():
     products = query.all()
 
     return render_template('Store.html', products=products)
-=======
-def index():
-    db = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="shopdb"
-    )
-    cursor = db.cursor()
-    cursor.execute("SELECT product_name,description,image_url FROM products")
-    rows = cursor.fetchall()
-    products = [{"name":r[0],"description":r[1],"image_url":r[2]} for r in rows]
-    db.close()
-    username = session.get('username')
-    return render_template('products.html', products=products, username=username)
->>>>>>> 6c4d6ab25275dee5ae60a73c7db61563aefaffac
 
 @app.route('/add_to_cart/<int:product_id>')
 def add_to_cart(product_id):
