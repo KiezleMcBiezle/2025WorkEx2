@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>bareform | Products</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="images/apple-touch-icon.png"
+        />
+        <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="images/favicon-32x32.png"
+        />
+        <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="images/favicon-16x16.png"
+        />
+        <link rel="icon" href="images/favicon.ico" />
+    </head>
+
+    <body class = "body">
+        <nav>
+        <ul class="navlinks">
+            <a href="{{url_for('orders')}}"> <h1>Orders</h1></a>
+            <a href="{{url_for('cart')}}">
+                <h1>Cart</h1>
+            </a>
+            <a href="{{url_for('about')}}">
+                <h1>About Us</h1>
+            </a>
+        </ul>
+        <div class="logo">
+            <span class="brand-name">bareform</span>
+            <img src="{{url_for('static', filename='/images/bareform logo.png')}}" id="logos" />
+        </div>
+
+        <ul id="login">
+            <a href="{{url_for('logout')}}">
+                <h1>Logout</h1>
+            </a>
+        </ul>
+        </nav>
+        <form method="get" action="{{ url_for('store') }}">
+            <label>Type:</label>
+            <select name="type">
+                <option value="">All</option>
+                <option value="Jacket">Jacket</option>
+                <option value="Jeans">Jeans</option>
+                <option value="Shirt">Shirt</option>
+                <option value="Pants">Pants</option>
+                <option value="Footwear">Footwear</option>
+                <option value="Top">Top</option>
+                <option value="Blazer">Blazer</option>
+                <option value="Hoodie">Hoodie</option>
+                <option value="Dress">Dress</option>
+                <option value="Skirt">Skirt</option>
+                <option value="Sweater">Sweater</option>
+                <option value="Accessory">Accessory</option>
+                <option value="Joggers">Joggers</option>
+            </select>
+
+            <label>Colour:</label>
+            <select name="colour">
+                <option value="">All</option>
+                <option value="Grey">Grey</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Blue">Blue</option>
+                <option value="Red">Red</option>
+                <option value="Plaid">Plaid</option>
+                <option value="Navy Blue">Navy Blue</option>
+                <option value="Charcoal Grey">Charcoal Grey</option>
+                <option value="Olive Green">Olive Green</option>
+                <option value="Navy">Navy</option>
+                <option value="Brown">Brown</option>
+                <option value="Cream">Cream</option>
+                <option value="Pink">Pink</option>
+            </select>
+
+            <label>Sort By:</label>
+            <select name="sort_by">
+                <option value="">Default</option>
+                <option value="price_asc">Price: Low to High</option>
+                <option value="price_desc">Price: High to Low</option>
+                <option value="name_asc">Name: A-Z</option>
+                <option value="name_desc">Name: Z-A</option>
+            </select>
+
+            <button type="submit">Apply</button>
+        </form>
+
+        <ul>
+            <table class="table">
+                    {% for product in products %}
+                        <tr>
+                            <th>
+                                <img src='{{url_for("static", filename=product.image)}}' alt="{{product.name}}" width="200" class=".product-item"/>
+                                <th>
+                                    <h2>{{product.name}}</h2>
+                                </th>
+                                <th>
+                                    <p class="productprice"><strong>{{product.price}}</strong></p>
+                                </th>
+                                <th>
+                                    <p>
+                                        {{product.description}}
+                                    </p>
+                                </th>
+                                <th>
+                                    <a href="{{ url_for('add_to_cart', product_id=product.id) }}"
+                                ><button type="button" class="addtocart">Add to Cart</button></a>
+                            </th>
+                        </tr>
+                    {% endfor %}
+            </table>
+        </ul>
+    </body>
+</html>

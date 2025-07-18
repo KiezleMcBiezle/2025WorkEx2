@@ -1,0 +1,433 @@
+html,
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #aef7f6 !important;
+}
+
+@font-face {
+    font-family: "Winky Rough";
+    src: url(/static/WinkyRough-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(/static/RobotoSlab-VariableFont_wght.ttf);
+}
+
+section {
+    font-family: "Roboto Slab";
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh;
+    background: #ccc;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    height: 50vh;
+}
+
+section.left {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    font-family: "Roboto Slab";
+
+}
+
+section.right {
+    position: relative;
+    width: 100%;
+    text-align: right;
+    font-family: "Roboto Slab";
+    position: absolute;
+    right: 1vw;
+}
+
+section p {
+    font-size: 1.35rem;
+    font-family: "Roboto Slab";
+}
+
+#hoodietext {
+    font-size: .99rem;
+}
+
+section.left p {
+    margin-right: 50%;
+}
+
+
+section.right p {
+    margin-left: 50%;
+}
+
+.bottom-link {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    bottom: 2vh;
+    position: absolute;
+    right: 45vw;
+}
+
+.products {
+    text-align: center;
+    position: grid;
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw;
+    gap: 10vw;
+    border: 0px solid #000;
+    justify-content: center;
+}
+
+.details {
+    position: relative;
+    left: 0vw;
+    right: 100%;
+    grid-template-columns: 25vw;
+    grid-template-rows: 50vh;
+    width: 25vw;
+    height: 70vh;
+}
+
+.product-item {
+    padding: 30px;
+    border: 5px solid #394558;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+    width: 12vw;
+    height: 40vh;
+    margin: auto;
+}
+
+.products a {
+    text-decoration: none;
+    color: black;
+}
+
+.productimage,
+.producttext {
+    display: table-cell;
+    vertical-align: bottom;
+    clear: both;
+    text-align: center;
+    border: 0px solid tomato;
+    padding: 10px;
+}
+
+.productimage {
+    align-self: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.hoodie-section {
+    
+    padding-bottom: 40px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px; 
+    padding: 0px 0px 0px 0px;
+    padding-bottom: 7vh; 
+}
+
+.detail-hoodie {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.detailhoodie {
+    padding-bottom: 7vh;
+    position: absolute;
+}
+
+.producttext {
+    width: 10vw;
+    top: 0;
+}
+
+.jacket-section {
+    width: auto;
+    padding-left: 0px;
+    padding-right: 1px;
+    padding-top: 0px;
+    padding-bottom: 8vh;
+}
+
+#jacket {
+    width: 17vw;
+    height: 40vh;
+}
+
+.jackettext {
+    font-size: 1.15rem;
+}
+
+.jogger-section {
+    width: auto;
+
+    padding-left: 0px;
+    padding-right: 1px;
+    padding-top: 0px;
+    padding-bottom:3.3vh;
+}
+
+#jogger {
+    width: 17vw;
+    height: 30vh;
+}
+
+.joggertext {
+    font-size: 1.15rem;
+}
+
+.navlinks {
+    width: 80vw;
+}
+
+.navlinks a {
+    color: white;
+}
+
+.navlinks a:hover {
+    color: #51a79b;
+    /* Darker yellow */
+}
+
+#login {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#login a {
+    color: white;
+}
+
+#login a:hover {
+    color: #51a79b;
+    /* Darker yellow */
+}
+
+.brand-name {
+    font-family: "Winky Rough";
+    font-size: 5vh;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    left: 44vw;
+
+}
+
+#logos {
+    width: 6vw;
+    height: 12.5vh;
+
+}
+
+.homesection {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 16vh;
+}
+
+.filler {
+    height: 10vh;
+}
+
+.aboutussection {
+    height: 40vh;
+}
+
+#hoodie {
+    align-self: center;
+    left: 50vw;
+    width: 17vw;
+    height: 40vh;
+}
+
+.detailtext {
+    font-size: 1.5rem;
+    position: absolute;
+}
+
+.detailtitle {
+    margin-left: 48vw;
+}
+
+.writing {
+    position: absolute;
+    left: 50vw;
+    width: 30vh;
+    margin-right: 0vw;
+    margin-top: 10vh;
+    font-size: 1.75rem;
+    color: rgb(145, 11, 11);
+}
+
+.description{
+    float: right;
+    width: 30vw;
+    height: 10vh;
+    margin-right: 30vw;
+    margin-top: 25vh;
+}
+
+.addtocart {
+    color: #ebf3f3;
+    height: 13vh;
+    width: 20vh;
+    font-size: larger;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif, sans-serif ;
+    background-color: #51a4c2;
+    border-radius: 70% ;
+}
+
+.remove {
+    background-color: rgb(145, 11, 13);
+}
+
+table, th{
+    border: 0.2vh solid black;
+}
+table {
+    width: 100%;
+}
+
+.productprice {
+    color: rgb(145, 11, 11);
+}
+
+th{
+    padding: 0.1vw;
+}
+
+
+.carttitle{
+    margin-left: 41vw;
+}
+
+.checkout {
+    background-color: #52e142;
+    float: right;
+    margin: 3vh;
+    margin-right: 38vw;
+    width: 20vw;
+    height: 20vh;
+}
+
+.checkoutpage {
+    margin-left: 30vw;
+}
+
+.order{
+    height:10vh;
+    width: 15vw;
+    float: right;
+    margin-right: 45vw;
+    background-color: #347582;
+    color: antiquewhite;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: #000;
+    border-radius: 40vw;
+    margin-top: 8vh;
+    font-size: 1rem;
+    margin-bottom: 5vh;
+}
+
+.name {
+    width: 20vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.address {
+    width: 40vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkoutform {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+}   
+
+.checkouttitle{
+    font-size: 2.3rem;
+}
+
+.checkouttotal {
+    font-size: 1.5rem;
+}
+
+.loginbutton{
+    height: 7vh;
+    width:7vw;
+    background-color:#394558;
+    color:antiquewhite;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: larger;
+    margin: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.logindiv {
+    margin-left: 36vw;
+}
+
+.type{
+    font-size: larger;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}

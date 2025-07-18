@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <nav>
+      <div class="logo">
+        <span class="brand-name">bareform</span>
+        <img src="{{ url_for('static', filename='/images/bareform logo.png') }}" id="logos" />
+      </div>
+
+      <ul id="login">
+        <li>
+          <a href="{{ url_for('store') }}">
+            <h1>Store</h1>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    </head>
+
+    <body>
+        <h2>Your Orders</h2>
+        {% if orders %}
+              <table class="table">
+                {%for order in orders%} 
+        <tr>
+          <th>
+            <h2>Order Number: {{order.id}}</h2>
+          </th>
+          <th>
+                    {% for item_id in order.items.split(',') %}
+                        <li class="productprice">{{Products[item_id].name}}</li>
+                    {% endfor %}
+          </th>
+          <th>
+                {% for item_id in order.items.split(',')|unique %}
+                    <li>
+                        <img src="{{url_for('static', filename=Products[item_id].image)}}" class="productimage" width = 100 id="hoodie"/>
+                    </li>
+                {% endfor %}
+          </th>
+          <th>
+            <p class="productprice"> £{{order.total_price}} </p>
+          </th>
+        </tr>
+        {%endfor%}
+      </table>
+        {% else %}
+            <p>No orders yet.</p>
+        {% endif %}
+    </body>
+</html>
+
+
+
