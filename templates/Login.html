@@ -1,0 +1,34 @@
+<html>
+    <head>
+        
+    <nav>
+      <div class="logo">
+        <span class="brand-name">bareform</span>
+        <img src="{{ url_for('static', filename='/images/bareform logo.png') }}" id="logos" />
+      </div>
+
+      <ul id="login">
+        <li>
+          <a href="{{ url_for('about') }}">
+            <h1>Back to Home</h1>
+          </a>
+        </li>
+      </ul>
+    </nav>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+
+    <body>
+        <div class="logindiv">
+        <h2>Login to Bareform</h2>
+        <form method="POST">
+            Username: 
+            <input name="username" class="name"><br>
+            Password: 
+            <input name="password" type="password" class ="name"><br>
+            <button type="submit" class="loginbutton">Login</button>
+        </form>
+        <a href="{{ url_for('register') }}">Don't have an account? Register</a>
+        </div>
+    </body>
+</html>

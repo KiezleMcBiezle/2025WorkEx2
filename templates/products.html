@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bareform | Products</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    
+    <form method="get">
+        <label>Filter by type:
+            <select name="type">
+                <option value="">All</option>
+                <option value="shirts" {% if type == 'shirts' %}selected{% endif %}>Shirts</option>
+                <option value="accessories" {% if type == 'accessories' %}selected{% endif %}>accessories</option>
+            </select>
+        </label>
+
+        <label>Sort by:
+            <select name="sort">
+                <option value="price_asc" {% if sort == 'price_asc' %}selected{% endif %}>Price (Low → High)</option>
+                <option value="price_desc" {% if sort == 'price_desc' %}selected{% endif %}>Price (High → Low)</option>
+                <option value="name" {% if sort == 'name' %}selected{% endif %}>Name</option>
+                <option value="newest" {% if sort == 'newest' %}selected{% endif %}>Newest</option>
+            </select>
+        </label>
+
+        <button type="submit">Apply</button>
+    </form>
+
+    <main>
+        <h2>Our Collection</h2>
+        {%for product in products%}
+            <div class="product">
+                <div><img src= "{{url_for('static',filename='Images/' + product.image_url)}}" width = "256"></div>
+                <hr>
+                <div class="producttext"><p>{{product.name}}</p></div>
+            </div>
+        {%endfor%}
+    </main>
+</body>
+</html>

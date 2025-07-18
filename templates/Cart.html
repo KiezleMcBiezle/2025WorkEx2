@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bareform | Products</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="icon" href="images/favicon.ico" />
+    </head>
+
+    <body>
+        <nav>
+        <ul class="navlinks">
+          <li>
+            <a href="{{ url_for('about') }}"> <h1>Home</h1></a>
+          </li>
+          <li>
+            <a href="{{ url_for('store') }}">
+              <h1>Store</h1>
+            </a>
+          </li>
+        </ul>
+        <div class="logo">
+          <span class="brand-name">bareform</span>
+          <img src="{{ url_for('static', filename='/images/bareform logo.png') }}" id="logos" />
+        </div>
+  
+        <ul id="login">
+          <li>
+            <a href="{{ url_for('logout') }}">
+              <h1>Logout</h1>
+            </a>
+          </li>
+        </ul>
+        </nav>
+        <h1>Your Shopping Cart</h1>
+        {% if cart_items %}
+            <ul>
+            <table class="table">
+                    {% for item in cart_items %}
+                        <tr>
+                            <th>
+                                <img src='{{url_for("static", filename=item.image)}}' alt="{{item.name}}" width="200" class="productimage"/>
+                                <th>
+                                    <h2>{{item.name}}</h2>
+                                </th>
+                                <th>
+                                    <p class="productprice"><strong>{{item.price}}</strong></p>
+                                </th>
+                                <th>
+                                    <p>
+                                        {{item.description}}
+                                    </p>
+                                </th>
+                                <th>
+                                    <a href="{{ url_for('remove_from_cart', product_id=item.id) }}"
+                                ><button type="button" class="addtocart remove">Remove from Cart</button></a>
+                            </th>
+                        </tr>
+                {% endfor %}
+              <tr>
+                  <th>
+                    <p class="productprice">Total:</p>
+                  </th>
+                  <th>
+                    <p class="productprice total"><strong>£{{total}}</strong></p>
+                  </th>
+                </tr>
+            </table>
+            </ul>
+            <a href="{{ url_for('checkout') }}"><button type="button" class="addtocart checkout">Pay(Don't Worry Magic Money)</button></a>
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+    </body>
+</html>

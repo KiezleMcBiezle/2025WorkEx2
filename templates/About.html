@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <nav>
+        {% if 'user_id' in session %}
+        <ul class="navlinks">
+          <li>
+            <a href="{{ url_for('store') }}"> <h1>Store</h1></a>
+          </li>
+          <li>
+            <a href="{{ url_for('cart') }}">
+              <h1>Cart</h1>
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('orders') }}">
+              <h1>Orders</h1>
+            </a>
+          </li>
+          <li>
+            <a href="orders.html">
+              <h1>Orders</h1>
+            </a>
+          </li>
+        </ul>
+        <div class="logo">
+          <span class="brand-name">bareform</span>
+          <img src="{{ url_for('static', filename='/images/bareform logo.png') }}" id="logos" />
+        </div>
+  
+        <ul id="login">
+          <li>
+            <a href="{{ url_for('logout') }}">
+              <h1>Logout</h1>
+            </a>
+          </li>
+        </ul>
+        {% else %}
+      <div class="logo">
+        <span class="brand-name">Bareform</span>
+        <img src="{{ url_for('static', filename='/images/bareform logo.png') }}" id="logos" />
+      </div>
+
+      <ul id="login">
+        <li>
+          <a href="{{ url_for('store') }}">
+            <h1>Login</h1>
+          </a>
+        </li>
+      </ul>
+        <title>About Us - My WebStore</title>
+        {% endif %}
+    </nav>
+</head>
+<body>
+        <div class="aboutussection">
+            <section class="left">
+                <h2>Who are we?</h2>
+                <p>Bareform is the epitome of being comfortable in your own skin. At its core, Bareform is a love letter to minimalism—with a soul. Born from the desire to strip fashion down to its essentials while retaining edge, comfort, and attitude, Bareform isn’t just about the clothes you wear — it's about how they make you feel when everything else fades away.In an era where you can just be, just be Bareform.</p>
+
+            </section>
+        </div>
+        <div class="aboutussection">
+            <section class="right">
+                <h2>How did we come to be?</h2>
+                <p>Bareform is steeped in tradition. Formed in 1956 by a trio of fashion connoisseurs, Bareform rose to fame and has been topping the market of simplicity ever since. The unique ideas of Sigvard Lévesque, Pavan Statham and Konrad Ford still live and breathe in every piece of clothing Bareform produces. Bareform sees fashion like no other, and sticks truly by it's motto - just be Bareform.</p>
+
+
+            </section>
+        </div>
+        <div class="aboutussection">
+            <section class="left">
+                <h2>Who is our target audience?</h2>
+                <p>Our target market is directed towards the real ones:the hard workers on their 9-to-5s,who will relish the ultimate comfort experience offered here at Bareform.</p>
+            </section>
+</body>
+</html>
